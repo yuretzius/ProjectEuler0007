@@ -9,22 +9,21 @@ def Erat(N):
     if N == 0 or N == 1 : return []
     elif N == 2: return [2]
     elif N == 3: return [2,3]
-    else:
-        N_bool = np.array([True]*(N+1))
-        N_bool[0] = False
-        N_bool[1] = False
-        #N_bool[2] = True
-        #N_bool[3] = True
-        N_bool[2**2::2] = False # eiminating even numbers
-        p = 3
-        while p*p <= N:
-            # start from p**2
-            # because all the smaller composites have factors <p
-            # and are already eliminated in previous steps
-            N_bool[p**2::p] = False # python doesn't care if ::p goes beyond existing array
-            p = p + 2 # only odd numbers can be primes larger than 3
-            while not N_bool[p]:
-                p = p + 2 # skip p if it has already been eliminated in previous steps
+    N_bool = np.array([True]*(N+1))
+    N_bool[0] = False
+    N_bool[1] = False
+    #N_bool[2] = True
+    #N_bool[3] = True
+    N_bool[2**2::2] = False # eiminating even numbers
+    p = 3
+    while p*p <= N:
+        # start from p**2
+        # because all the smaller composites have factors <p
+        # and are already eliminated in previous steps
+        N_bool[p**2::p] = False # python doesn't care if ::p goes beyond existing array
+        p = p + 2 # only odd numbers can be primes larger than 3
+        while not N_bool[p]:
+            p = p + 2 # skip p if it has already been eliminated in previous steps
     # returns indices of nonzero elements, which in this case
     # ARE the correcponding natural numbers, which were not eliminated
     # Have to use index [0], because for technical reasons it produces a 2D array
@@ -38,22 +37,21 @@ def EratM(N):
     if N < 11:
         first_primes = ([],[],[2],[2,3],[2,3],[2,3,5],[2,3,5],[2,3,5,7],[2,3,5,7],[2,3,5,7],[2,3,5,7])
         return(first_primes[N]) 
-    else:
-        N_bool = np.array([True]*(N+1))
-        N_bool[0] = False
-        N_bool[1] = False
-        N_bool[2**2::2] = False # eiminating even numbers
-        N_bool[3**2::3] = False # eiminating multiples of 3
-        p = 5
-        while p*p <= N:
-            # start from p**2
-            # because all the smaller composites have factors <p
-            # and are already eliminated in previous steps
-            if N_bool[p]:
-                N_bool[p**2::p] = False # python doesn't care if ::p goes beyond existing array
-            if N_bool[p+2]:
-                N_bool[(p+2)**2::(p+2)] = False
-            p = p + 6 # we can move in steps of 6
+    N_bool = np.array([True]*(N+1))
+    N_bool[0] = False
+    N_bool[1] = False
+    N_bool[2**2::2] = False # eiminating even numbers
+    N_bool[3**2::3] = False # eiminating multiples of 3
+    p = 5
+    while p*p <= N:
+        # start from p**2
+        # because all the smaller composites have factors <p
+        # and are already eliminated in previous steps
+        if N_bool[p]:
+            N_bool[p**2::p] = False # python doesn't care if ::p goes beyond existing array
+        if N_bool[p+2]:
+            N_bool[(p+2)**2::(p+2)] = False
+        p = p + 6 # we can move in steps of 6
     # returns indices of nonzero elements, which in this case
     # ARE the correcponding natural numbers, which were not eliminated
     # Have to use index [0], because for technical reasons it produces a 2D array

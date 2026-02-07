@@ -27,7 +27,7 @@ Because apart from N itself a number can only have one divisor above sqrt(N), an
 so checking for it is not necessary. E.g. for 55 = 5 * 11 floor(sqrt(55)) = 7, and it is enough to check for a divisor below 7 to find 5,
 looking for 11 is excessive.
 
-I've slightly improved Erat(N) from problem 5 and created EratM(N) which immediately eliminates doubles and triples,
+I've slightly improved Erat(N) from [problem 5](https://github.com/yuretzius/ProjectEuler0005) and created EratM(N) which immediately eliminates doubles and triples,
 and then only checks pairs p and p+2 with step 6. The inconvenience of this function is that it lists all primes below or equal to N,
 so it is excessive for the task of this problem and also we need to know up to which number to populate the array to reach the required nth prime.
 But I see no point to write a special version just to look for the nth prime.

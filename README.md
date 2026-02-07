@@ -1,7 +1,7 @@
 # ProjectEuler0007
 My work on
 
-problem #7 of projecteuler.net:
+[problem #7 of projecteuler.net](https://projecteuler.net/problem=7):
 
 10 001st Prime
 

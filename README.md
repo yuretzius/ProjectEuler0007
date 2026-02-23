@@ -37,3 +37,5 @@ In C++ code I create a more or less efficient function isPrime(N) to test for pr
 but then use it in a rather inefficient manner, just cycling through numbers with step 2 and checking for primeness,
 keeping the resulting primes in a vector. I tried just counting primes and keeping only the last one, but that did
 not change much. Same 10 000 001th prime is found in about ~230s.
+
+Of course, this problem requires more work. For one thing, can use the Miller-Rabin test from [problem 150](https://github.com/yuretzius/ProjectEuler0200).

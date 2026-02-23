@@ -38,4 +38,4 @@ but then use it in a rather inefficient manner, just cycling through numbers wit
 keeping the resulting primes in a vector. I tried just counting primes and keeping only the last one, but that did
 not change much. Same 10 000 001th prime is found in about ~230s.
 
-Of course, this problem requires more work. For one thing, can use the Miller-Rabin test from [problem 150](https://github.com/yuretzius/ProjectEuler0200).
+Of course, this problem requires more work. For one thing, can use the Miller-Rabin test from [problem 200](https://github.com/yuretzius/ProjectEuler0200).
